@@ -1,0 +1,206 @@
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.csproj.AssemblyReference.cache
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.GeneratedMSBuildEditorConfig.editorconfig
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.AssemblyInfoInputs.cache
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.AssemblyInfo.cs
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.csproj.CoreCompileInputs.cache
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.MvcApplicationPartsAssemblyInfo.cs
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.MvcApplicationPartsAssemblyInfo.cache
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\appsettings.Development.json
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\appsettings.json
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\intern_project.exe
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\intern_project.deps.json
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\intern_project.runtimeconfig.json
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\intern_project.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\intern_project.pdb
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\AutoMapper.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Azure.Core.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Azure.Identity.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\BCrypt.Net-Next.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Castle.Core.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Humanizer.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\MailKit.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\MimeKit.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.CodeDom.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Memory.Data.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Text.Json.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.intern_project.Microsoft.AspNetCore.StaticWebAssets.props
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.build.intern_project.props
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.intern_project.props
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.intern_project.props
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets.pack.json
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets.build.json
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\staticwebassets.development.json
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\scopedcss\bundle\intern_project.styles.css
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.csproj.CopyComplete
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\refint\intern_project.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.pdb
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\intern_project.genruntimeconfig.cache
+D:\fake C\VS2022\c#\intern_project\intern_project\obj\Debug\net6.0\ref\intern_project.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Scrutor.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\fake C\VS2022\c#\intern_project\intern_project\bin\Debug\net6.0\intern_project.staticwebassets.runtime.json
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\appsettings.Development.json
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\appsettings.json
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\intern_project.staticwebassets.runtime.json
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\intern_project.exe
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\intern_project.deps.json
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\intern_project.runtimeconfig.json
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\intern_project.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\intern_project.pdb
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\AutoMapper.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Azure.Core.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Azure.Identity.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\BCrypt.Net-Next.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Castle.Core.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Humanizer.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\MailKit.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\MimeKit.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Mono.TextTemplating.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Scrutor.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.CodeDom.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Formats.Asn1.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Memory.Data.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Runtime.Caching.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Security.Permissions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Text.Json.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\System.Windows.Extensions.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+E:\Intern_Project\intern_project\intern_project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.csproj.AssemblyReference.cache
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.GeneratedMSBuildEditorConfig.editorconfig
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.AssemblyInfoInputs.cache
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.AssemblyInfo.cs
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.csproj.CoreCompileInputs.cache
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.MvcApplicationPartsAssemblyInfo.cs
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.MvcApplicationPartsAssemblyInfo.cache
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.intern_project.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.build.intern_project.props
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.intern_project.props
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.intern_project.props
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets.pack.json
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets.build.json
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\staticwebassets.development.json
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\scopedcss\bundle\intern_project.styles.css
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.csproj.CopyComplete
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.dll
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\refint\intern_project.dll
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.pdb
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\intern_project.genruntimeconfig.cache
+E:\Intern_Project\intern_project\intern_project\obj\Debug\net6.0\ref\intern_project.dll
