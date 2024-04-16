@@ -5,7 +5,7 @@ body{
 .lts_logo{
   
   width: 140px;
-height: auto;
+  height: auto;
 }
 .navbar-toggler{
   color: darkorange;
@@ -39,7 +39,6 @@ height: auto;
 #header{
   padding: 3px;
   color: orange;
-
 }
 #header > h1{
   font-size: 40px;
@@ -64,6 +63,7 @@ height: auto;
   width: 78%;
   float: right;
   background-color: orange;
+  padding: 0 15px;
 }
 .sidebar{
   height: 100%; /* 100% Full-height */
