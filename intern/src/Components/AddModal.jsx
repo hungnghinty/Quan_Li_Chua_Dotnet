@@ -3,7 +3,7 @@ import '../CSS/AddModal.css'
 import axios from 'axios'
 
 
-export default function AddModal({ closeModal,token}) {
+export default function AddModal({ closeModal,token}){
     //lay count
     const [data, setData] = useState([])
     const [totalcount, setTotalCount] = useState()
