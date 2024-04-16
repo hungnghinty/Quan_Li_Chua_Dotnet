@@ -61,7 +61,8 @@ body{
 }
 .content{
     margin-top: 34px;
-    width: 78%;
+    /* width: 78%; */
+    width: 500px;
     float: right;
     background-color: orange;
 }
