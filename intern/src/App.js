@@ -4,14 +4,19 @@ import Table from './Components/Table';
 import logo from './logo.svg';
 import './CSS/style.css'
 import LoginModal from './Components/LoginModal';
+import PhattuContent from './Phattu/PhattuContent'
+import DaotrangContent from './Daotrang/DaotrangContent';
+import {Router, Route, Routes} from 'react-router-dom'
+import ChuaContent from './Chua/ChuaContent';
+import DondangkiContent from './Dondangky/DondangkyContent';
 
 function App() {
   const [openLoginModal, setOpenLoginModal] = useState(true)
-  const [openAddModal, setOpenAddModal] = useState(false)
+  
 
   const [token, setToken] = useState('')
 
-  const [findinput, setFindInput] = useState('')
+  
 
   const handleToken = (loginToken) => {
     setToken(loginToken)
@@ -46,24 +51,28 @@ function App() {
         <div id="main">
           <ul className="sidebar" id="sidebar-content">
             <li className="part">
-              <a href="#"><i className="fa-solid fa-house"></i>Phật Tử</a>
+              <a href="/phattu"><i className="fa-solid fa-house"></i>Phật Tử</a>
             </li>
             <li className="part">
-              <a href="#"><i className="fa-regular fa-user"></i>Đạo Tràng</a>
+              <a href="/daotrang"><i className="fa-regular fa-user"></i>Đạo Tràng</a>
             </li>
             <li className="part">
-              <a href="#"><i className="fa-solid fa-circle-user"></i>Chùa</a>
+              <a href="/chua"><i className="fa-solid fa-circle-user"></i>Chùa</a>
             </li>
             <li className="part">
-              <a href="#"><i className="fa-regular fa-user"></i>Đơn Đăng kí</a>
-            </li>
-            <li className="part">
-              <a href="#"><i className="fa-solid fa-list"></i>Thông tin cá nhân</a>
+              <a href="/dondangki"><i className="fa-regular fa-user"></i>Đơn Đăng kí</a>
             </li>
           </ul>
 
+          <Routes>
+            <Route path='/phattu' element ={<PhattuContent token={token} />} />
+            <Route path='/daotrang' element ={<DaotrangContent token={token} />}/>
+            <Route path='/chua' element ={<ChuaContent token={token} />}/>
+            <Route path='/dondangki' element ={<DondangkiContent token={token} />}/>
+          </Routes>
 
-          <div className="content">
+
+          {/* <div className="content">
             <div className="path">
               <a href="#">Home</a>
             </div>
@@ -104,7 +113,7 @@ function App() {
                   <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a className="dropdown-item" href="#">Action</a>
                     <a className="dropdown-item" href="#">Another action</a>
-                    <a className="dropdown-item" href="#">Something else here</a>
+                    
                   </div>
                 </div>
                 <div className='datatable'>
@@ -114,13 +123,13 @@ function App() {
 
               </div>
             </div>
-          </div>
+          </div> */}
 
         </div>
 
       </div>
-      {openAddModal && <AddModal closeModal={setOpenAddModal} token = {token}/>}
-      {openLoginModal && <LoginModal closeModal={setOpenLoginModal} handleToken={handleToken} />}
+      
+      {/* {openLoginModal && <LoginModal closeModal={setOpenLoginModal} handleToken={handleToken} />} */}
 
 
     </div>
