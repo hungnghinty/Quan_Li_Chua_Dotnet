@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import EditModal from './EditModal';
 import axios from 'axios';
+// import './CSS/table.css'
 
 export default function Tabletr({user,index}) {
     const [openEditModal, setOpenEditModal] = useState(false)
