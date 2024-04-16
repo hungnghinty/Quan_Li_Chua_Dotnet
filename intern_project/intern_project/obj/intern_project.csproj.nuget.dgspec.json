@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Intern_Project\\intern_project\\intern_project\\intern_project.csproj": {}
+    "C:\\Users\\ndchi\\OneDrive\\Desktop\\kientruc\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj": {}
   },
   "projects": {
-    "E:\\Intern_Project\\intern_project\\intern_project\\intern_project.csproj": {
+    "C:\\Users\\ndchi\\OneDrive\\Desktop\\kientruc\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Intern_Project\\intern_project\\intern_project\\intern_project.csproj",
+        "projectUniqueName": "C:\\Users\\ndchi\\OneDrive\\Desktop\\kientruc\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj",
         "projectName": "intern_project",
-        "projectPath": "E:\\Intern_Project\\intern_project\\intern_project\\intern_project.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\Intern_Project\\intern_project\\intern_project\\obj\\",
+        "projectPath": "C:\\Users\\ndchi\\OneDrive\\Desktop\\kientruc\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj",
+        "packagesPath": "C:\\Users\\ndchi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ndchi\\OneDrive\\Desktop\\kientruc\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ndchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
