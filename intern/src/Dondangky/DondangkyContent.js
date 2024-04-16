@@ -3,14 +3,14 @@
 // import LoginModal from 'C:/Users/Admin/Desktop/Quan_Li_Chua_Dotnet/intern/src/Components/LoginModal';
 // import { useState } from 'react';
 
-// export default function ChuaContent({token}) {
+// export default function DondangkiContent({token}) {
 //     const [openAddModal, setOpenAddModal] = useState(false)
 //     const [findinput, setFindInput] = useState('')
 
 
 //     return (
 //         <div className="content">
-//             <h1>ChuaContent</h1>
+//             <h1>DondangkiContent</h1>
 //         </div>
         
 //     )
