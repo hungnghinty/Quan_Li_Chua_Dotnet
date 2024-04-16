@@ -1,6 +1,6 @@
-import AddModal from 'C:/Users/Admin/Desktop/Quan_Li_Chua_Dotnet/intern/src/Components/AddModal.jsx';
-import Table from 'C:/Users/Admin/Desktop/Quan_Li_Chua_Dotnet/intern/src/Components/Table';
-import LoginModal from 'C:/Users/Admin/Desktop/Quan_Li_Chua_Dotnet/intern/src/Components/LoginModal';
+import AddModal from '../Components/AddModal';
+import Table from '../Components/Table';
+import LoginModal from '../Components/LoginModal';
 import { useState } from 'react';
 
 export default function PhattuContent({token}) {

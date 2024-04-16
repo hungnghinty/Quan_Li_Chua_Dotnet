@@ -40,9 +40,9 @@ namespace intern_project.Controllers
             }
             return BadRequest("Cap nhat dao trang that bai");
         }
-        [HttpDelete("xoadondangky")]
+        [HttpDelete("xoadondangky/{donXoaID}")]
         //[Authorize(Roles = "0")]
-        public IActionResult XoaDonDangKy([FromBody] int donXoaID)
+        public IActionResult XoaDonDangKy(int donXoaID)
         {
             var xoa = donDangKyServices.XoaDonDK(donXoaID);
             if (xoa == ErrorType.ThanhCong)
@@ -51,9 +51,9 @@ namespace intern_project.Controllers
             }
             return BadRequest("Xoa dao trang that bai");
         }
-        [HttpPost("duyetdondangky")]
+        [HttpPost("duyetdondangky/{donDuyet}")]
         //[Authorize(Roles = "0")]
-        public IActionResult DuyetDonDangKy([FromBody] int donDuyet)
+        public IActionResult DuyetDonDangKy(int donDuyet)
         {
             var sua = donDangKyServices.DuyetDonDK(donDuyet);
             if (sua == ErrorType.ThanhCong)
@@ -83,6 +83,6 @@ namespace intern_project.Controllers
             return BadRequest("lay danh sach don dang ky that bai");
         }
 
-        
+
     }
 }

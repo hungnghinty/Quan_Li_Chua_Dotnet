@@ -3,6 +3,7 @@ using intern_project.Helper;
 using intern_project.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System;
 
 namespace intern_project.Services
 {
@@ -15,10 +16,12 @@ namespace intern_project.Services
         }
         public PageResult<Dondangky> GetDangSachDonDK(int? keyword, Pagination pagination)
         {
-            var dsDonDK = dbContext.Dondangkys.AsEnumerable();
+            var dsDonDK = dbContext.Dondangkys.AsQueryable();
+
+            dsDonDK = dsDonDK.Include(x => x.Phattu);
             if (keyword != null)
             {
-                dsDonDK = dsDonDK.Where(x => x.Dondangkyid == keyword 
+                dsDonDK = dsDonDK.Where(x => x.Dondangkyid == keyword
                                             || x.Daotrangid == keyword
                                             || x.Phattuid == keyword);
             }
@@ -65,9 +68,9 @@ namespace intern_project.Services
                 }
 
                 sua.Ngayguidon = donDK.Ngayguidon;
-                sua.Ngayxuly = donDK.Ngayxuly; 
-                sua.Nguoixuly = donDK.Nguoixuly; 
-                sua.Trangthaidon = donDK.Trangthaidon; 
+                sua.Ngayxuly = donDK.Ngayxuly;
+                sua.Nguoixuly = donDK.Nguoixuly;
+                sua.Trangthaidon = donDK.Trangthaidon;
                 sua.Daotrangid = donDK.Daotrangid;
                 sua.Phattuid = donDK.Phattuid;
 
@@ -80,20 +83,24 @@ namespace intern_project.Services
 
         public ErrorType ThemDonDK(Dondangky donDK)
         {
-            var checkIsActive = dbContext.Phattus.FirstOrDefault(x => x.Phattuid == donDK.Phattuid);
-            if(checkIsActive!=null && checkIsActive.IsActive == true)
+
+            var them = dbContext.Dondangkys.FirstOrDefault(x => x.Dondangkyid == donDK.Dondangkyid);
+            if (them == null)
             {
-                var them = dbContext.Dondangkys.FirstOrDefault(x => x.Dondangkyid == donDK.Dondangkyid);
-                if (them == null)
-                {
-                    dbContext.Dondangkys.Add(donDK);
-                    dbContext.SaveChanges();
-                    return ErrorType.ThanhCong;
-                    
-                }
-                return ErrorType.TonTai;
+                dbContext.Dondangkys.Add(donDK);
+                dbContext.SaveChanges();
+                return ErrorType.ThanhCong;
+
             }
-            return ErrorType.ChuaTonTai;
+            return ErrorType.TonTai;
+
+            //var checkIsActive = dbContext.Phattus.FirstOrDefault(x => x.Phattuid == donDK.Phattuid);
+            //if(checkIsActive!=null)
+            //{
+
+            //}
+            //return ErrorType.ChuaTonTai;
+
         }
 
         public ErrorType XoaDonDK(int donDKID)
@@ -106,9 +113,16 @@ namespace intern_project.Services
                                                           && x.Phattuid == donxoa.Phattuid);
 
                 var daotrang = dbContext.Daotrangs.FirstOrDefault(x => x.Daotrangid == donDKID);
-                daotrang.Sothanhvienthamgia--;
+                if (daotrang != null)
+                {
+                    daotrang.Sothanhvienthamgia--;
+                }
 
-                dbContext.Phattudaotrangs.Remove(phattudtxoa);
+                if (phattudtxoa != null)
+                {
+                    dbContext.Phattudaotrangs.Remove(phattudtxoa);
+
+                }
                 dbContext.Dondangkys.Remove(donxoa);
 
                 dbContext.SaveChanges();
@@ -121,13 +135,16 @@ namespace intern_project.Services
             var donduyet = dbContext.Dondangkys.FirstOrDefault(x => x.Dondangkyid == donDKID);
             if (donduyet != null)
             {
-                if(donduyet.Trangthaidon != 1)
+                if (donduyet.Trangthaidon != 1)
                 {
                     donduyet.Trangthaidon = 1;
                     dbContext.Update(donduyet);
 
+                    Random random = new Random();
+
                     var phattudtduyet = new Phattudaotrang
                     {
+                        Phattudaotrangid = random.Next(0, 101),
                         Dathamgia = true,
                         Lidokhongthamgia = "",
                         Daotrangid = donduyet.Daotrangid,

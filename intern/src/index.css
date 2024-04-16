@@ -79,6 +79,22 @@ height: auto;
   list-style: none;
   
 }
+.sidebar-wrapper{
+  height: 100%; /* 100% Full-height */
+  width: 250px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  padding-left: 42px;
+
+
+  text-decoration: none;
+  list-style: none;
+}
+
 .sidebar a{
   color:  orange;
   box-sizing: border-box;
@@ -179,4 +195,10 @@ height: auto;
   content: "";
   display: block;
   clear: both;
+}
+
+#main .sidebar i {
+  width: 24px;
+  aspect-ratio: 1 / 1;
+  margin-right: 4px;
 }

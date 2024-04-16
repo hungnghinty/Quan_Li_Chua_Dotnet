@@ -15,7 +15,7 @@ export default function AddModal({ closeModal,token}){
                 })
                 .catch(er => console.log(er))
         // }
-    }, [])
+    }, [data])
     //them du lieu
     let formdata = new FormData()
 
