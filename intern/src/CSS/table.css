@@ -1,5 +1,6 @@
 .datatable{
     width: 100%;
+    overflow-x: scroll;
 }
 td {
     width: 100px; /* Đặt độ rộng cho ô */
