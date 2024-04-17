@@ -14,7 +14,7 @@ namespace intern_project.Services
 
         public ErrorType ThemChua(Chua chuaThem)
         {
-            
+            chuaThem.Chuaid = GetMaxID() +1;
                 DbContext.Add(chuaThem);
                 DbContext.SaveChanges();
                 return ErrorType.ThanhCong;
@@ -60,6 +60,12 @@ namespace intern_project.Services
             var result = PageResult<Chua>.ToPageResult(pagination, dsChua);
             pagination.totalCount = DbContext.Chuas.Count();
             return new PageResult<Chua>(pagination, result);
+        }
+        public int GetMaxID()
+        {
+            var dsChua = DbContext.Chuas.AsEnumerable();
+            int max = (int)dsChua.Max(c => c.Chuaid);
+            return max;
         }
     }
 }

@@ -15,7 +15,7 @@ export default function AddModal({ closeModal,token}){
                 })
                 .catch(er => console.log(er))
         // }
-    }, [data])
+    }, [])
     //them du lieu
     let formdata = new FormData()
 
@@ -24,17 +24,17 @@ export default function AddModal({ closeModal,token}){
     const [ten, setTen] = useState('')
     const [anh, setAnh] = useState()
     const [phapdanh, setPhapdanh] = useState('')
-    const [gioitinh, setGioitinh] = useState()
+    const [gioitinh, setGioitinh] = useState(0)
     const [email, setEmail] = useState('')
     const [sdt, setSDT] = useState('')
     const [dahoantuc, setDahoantuc] = useState(false)
-    const [chuaid, setChuaid] = useState()
-    const [kieuthanhvienid, setKieuthanhvienid] = useState()
+    const [chuaid, setChuaid] = useState(0)
+    const [kieuthanhvienid, setKieuthanhvienid] = useState(0)
     const [password, setPassword] = useState('')
-    const [ngaysinh, setNgaysinh] = useState()
-    const [ngaycapnhat, setNgaycapnhat] = useState()
-    const [ngayhoantuc, setNgayhoantuc] = useState()
-    const [ngayxuatgia, setNgayxuatgia] = useState()
+    const [ngaysinh, setNgaysinh] = useState('')
+    const [ngaycapnhat, setNgaycapnhat] = useState('')
+    const [ngayhoantuc, setNgayhoantuc] = useState('')
+    const [ngayxuatgia, setNgayxuatgia] = useState('')
 
     const handleDaHoanTuc = e => {
         setDahoantuc(!dahoantuc)
@@ -47,23 +47,23 @@ export default function AddModal({ closeModal,token}){
     const handleSubmit = (e) => {
         e.preventDefault();
         // if(e.target && e.target.files[0]){
-            formdata.append('Phattuid',totalcount)
+            formdata.append('Phattuid',5)
             formdata.append('Anhchup',anh)
-            formdata.append('Dahoantuc',true)
-            formdata.append('Email','nguyenhungpv201203@gmail.com')
-            formdata.append('Gioitinh','0')
-            formdata.append('Ho','ho')
-            formdata.append('Ngaycapnhat','2023/08/04')
-            formdata.append('Ngayhoantuc','2023/08/04')
-            formdata.append('Ngaysinh','2023/08/04')
-            formdata.append('Ngayxuatgia','2023/08/04')
-            formdata.append('Password',"123")
-            formdata.append('Phapdanh','phapdanh')
-            formdata.append('Sodienthoai','0123456879')
-            formdata.append('Ten','ten')
-            formdata.append('Tendem','tendem')
-            formdata.append('Chuaid','1')
-            formdata.append('Kieuthanhvienid','1')
+            formdata.append('Dahoantuc',dahoantuc)
+            formdata.append('Email',email)
+            formdata.append('Gioitinh',gioitinh)
+            formdata.append('Ho', ho)
+            formdata.append('Ngaycapnhat',ngaycapnhat)
+            formdata.append('Ngayhoantuc',ngayhoantuc)
+            formdata.append('Ngaysinh',ngaysinh)
+            formdata.append('Ngayxuatgia',ngayxuatgia)
+            formdata.append('Password',password)
+            formdata.append('Phapdanh',phapdanh)
+            formdata.append('Sodienthoai',sdt)
+            formdata.append('Ten',ten)
+            formdata.append('Tendem',tendem)
+            formdata.append('Chuaid',chuaid)
+            formdata.append('Kieuthanhvienid',kieuthanhvienid)
             formdata.append('IsActive',true)
             
         // }
@@ -74,8 +74,13 @@ export default function AddModal({ closeModal,token}){
               "Authorization": `bearer ${token}`,
             },
           })
-        .then(res => console.log(res))
-        .catch(er => console.log(er))
+          .then((res) => {
+            alert("Thêm phattu thành công");
+            window.location.reload();
+          })
+          .catch((er) => {
+            alert(er);
+          });
 
         closeModal(false)
     }

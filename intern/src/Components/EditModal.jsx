@@ -60,9 +60,13 @@ export default function EditModal({ closeModal , id}) {
               "Content-Type": "multipart/form-data",
             },
           })
-        .then(res => console.log(res))
-        .catch(er => console.log(er))
-
+          .then((res) => {
+            alert("Edit phattu thành công");
+            window.location.reload();
+          })
+          .catch((er) => {
+            alert(er);
+          });
         closeModal(false)
     }
      

@@ -46,14 +46,11 @@ namespace intern_project.Services
 
         public ErrorType ThemDaoTrang(Daotrang daoTrangThem)
         {
-            var them = dbContext.Daotrangs.FirstOrDefault(x => x.Daotrangid == daoTrangThem.Daotrangid);
-            if (them == null)
-            {
+            daoTrangThem.Daotrangid = GetMaxID() + 1;
                 dbContext.Add(daoTrangThem);
                 dbContext.SaveChanges();
-                return ErrorType.ThanhCong;
-            }
-            return ErrorType.TonTai;
+               return ErrorType.ThanhCong;
+            
         }
 
         public ErrorType XoaDaoTrang(int daoTrangID)
@@ -66,6 +63,12 @@ namespace intern_project.Services
                 return ErrorType.ThanhCong;
             }
             return ErrorType.ChuaTonTai;
+        }
+        public int GetMaxID()
+        {
+            var dsDaotrang = dbContext.Daotrangs.AsEnumerable();
+            int max = (int)dsDaotrang.Max(c => c.Daotrangid);
+            return max;
         }
     }
 }

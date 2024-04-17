@@ -71,16 +71,10 @@ namespace intern_project.Services
         }
         public ErrorType ThemPhatTu(PhatTuImage phatTuImage)
         {
-            var findphattu = DbContext.Phattus.FirstOrDefault(x => x.Phattuid == phatTuImage.Phattuid);
-            if(findphattu != null)
-            {
-                return ErrorType.TonTai;
-            }
-            else
-            {
+            
                 var phatTuThem = new Phattu
                 {
-                    Phattuid = phatTuImage.Phattuid,
+                    Phattuid = GetMaxID() + 1,
                     Dahoantuc = phatTuImage.Dahoantuc,
                     Email = phatTuImage.Email,
                     Gioitinh = phatTuImage.Gioitinh,
@@ -94,7 +88,8 @@ namespace intern_project.Services
                     Ten = phatTuImage.Ten,
                     Tendem = phatTuImage.Tendem,
                     Chuaid = phatTuImage.Chuaid,
-                    Kieuthanhvienid = phatTuImage.Kieuthanhvienid
+                    Kieuthanhvienid = phatTuImage.Kieuthanhvienid,
+                    IsActive = phatTuImage.IsActive 
                 };
                 //xu ly anh
                 if (phatTuImage.Anhchup == null )
@@ -115,7 +110,7 @@ namespace intern_project.Services
                 DbContext.Add(phatTuThem);
                 DbContext.SaveChanges();
                 return ErrorType.ThanhCong;
-            }
+            
 
             
         }
@@ -172,7 +167,7 @@ namespace intern_project.Services
                                              || x.Email.ToLower().Contains(keyword.ToLower()));
             }
             var result = PageResult<Phattu>.ToPageResult(pagination, dsPhatTu);
-            pagination.totalCount = DbContext.Phattus.Count();
+            pagination.totalCount = dsPhatTu.Count();
             return new PageResult<Phattu>(pagination,result);
         }
 
@@ -184,6 +179,12 @@ namespace intern_project.Services
                 return ErrorType.ChuaTonTai;
             }
             return ErrorType.TonTai;
+        }
+        public int GetMaxID()
+        {
+            var dsPhattu = DbContext.Phattus.AsEnumerable();
+            int max = (int)dsPhattu.Max(c => c.Phattuid);
+            return max;
         }
     }
 }

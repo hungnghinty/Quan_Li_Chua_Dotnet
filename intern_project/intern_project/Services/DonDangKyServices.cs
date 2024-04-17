@@ -84,15 +84,11 @@ namespace intern_project.Services
         public ErrorType ThemDonDK(Dondangky donDK)
         {
 
-            var them = dbContext.Dondangkys.FirstOrDefault(x => x.Dondangkyid == donDK.Dondangkyid);
-            if (them == null)
-            {
+            donDK.Dondangkyid = GetMaxID() + 1;
                 dbContext.Dondangkys.Add(donDK);
                 dbContext.SaveChanges();
                 return ErrorType.ThanhCong;
 
-            }
-            return ErrorType.TonTai;
 
             //var checkIsActive = dbContext.Phattus.FirstOrDefault(x => x.Phattuid == donDK.Phattuid);
             //if(checkIsActive!=null)
@@ -163,6 +159,12 @@ namespace intern_project.Services
                 return ErrorType.TonTai;
             }
             return ErrorType.ChuaTonTai;
+        }
+        public int GetMaxID()
+        {
+            var dsDondk = dbContext.Dondangkys.AsEnumerable();
+            int max = (int)dsDondk.Max(c => c.Dondangkyid);
+            return max;
         }
     }
 }
