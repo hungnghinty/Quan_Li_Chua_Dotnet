@@ -1,13 +1,13 @@
-
+import { message } from 'antd'
 import React, { useState } from 'react'
 import '../CSS/AddModal.css'
 import axios from 'axios'
 
-export default function LoginModal({ closeModal , handleToken }) {
+export default function LoginModal({ closeModal, handleToken }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const [token,setToken] = useState('')
+    const [token, setToken] = useState('')
 
     let formdata = new FormData()
 
@@ -25,10 +25,17 @@ export default function LoginModal({ closeModal , handleToken }) {
             .then(res => {
                 console.log(res.data)
                 handleToken(res.data.toString())
+                if (res.status == 200) {
+                    closeModal(false)
+                    alert("Đăng nhập thành công");
+                }
             })
-            .catch(er => console.log(er))
+            .catch(err => {
+                console.log(err.response.data);
+                alert(err.response.data);
+                })
 
-        closeModal(false)
+
     }
 
 

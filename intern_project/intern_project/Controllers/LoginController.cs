@@ -43,12 +43,23 @@ namespace intern_project.Controllers
             }
             var resettoken = new Token
             {
-                Id = user.Phattuid,
                 Phattuid = user.Phattuid,
                 Token1 = CreateRandomToken(),
                 Tokentype = 1
             };
-            _context.Tokens.Add(resettoken);
+            var checktoken = _context.Tokens.FirstOrDefault(x => x.Phattuid == resettoken.Phattuid);
+            if(checktoken == null)
+            {
+                resettoken.Id = GetMaxID() + 1;
+                _context.Tokens.Add(resettoken);
+            }
+            else
+            {
+                _context.Tokens.Remove(checktoken);
+                resettoken.Id = GetMaxID() + 1;
+                _context.Tokens.Add(resettoken);
+
+            }
             _context.SaveChanges();
 
             //gui token vao email
@@ -64,7 +75,7 @@ namespace intern_project.Controllers
 
                 using var smtp = new SmtpClient();
                 smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-                smtp.Authenticate("nguyenhungpv201203@gmail.com", "fjkimsidafptoqax");
+                smtp.Authenticate("nguyenhungpv201203@gmail.com", "dzfg mipq lxqd zhqp");
                 smtp.Send(message);
                 smtp.Disconnect(true);
 
@@ -98,6 +109,11 @@ namespace intern_project.Controllers
         {
             return Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
         }
-        
+        private int GetMaxID()
+        {
+            var dsTokens = _context.Tokens.AsEnumerable();
+            int max = (int)dsTokens.Max(c => c.Id);
+            return max;
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace intern_project.Controllers
             phatTuServices = new PhatTuServices();
         }
         [HttpGet("laydanhsachphattu")]
+        [Authorize(Roles = "0")]
         public IActionResult GetDanhSachPhatTu(String? keyword, [FromQuery]Pagination pagination)
         { 
             var dsPhatTu = phatTuServices.GetDanhSachPhatTu(keyword,pagination);
