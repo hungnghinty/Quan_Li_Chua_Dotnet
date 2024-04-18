@@ -32,7 +32,7 @@ namespace intern_project.Controllers
             return Ok(dsPhatTu);
         }
         [HttpPost("themphattu")]
-        //[Authorize(Roles = "0")]
+        [Authorize(Roles = "0")]
         public IActionResult themPhatTu([FromForm] PhatTuImage phattuimage)
         {
             var ret = phatTuServices.ThemPhatTu(phattuimage);
@@ -43,6 +43,7 @@ namespace intern_project.Controllers
             return BadRequest("Them that bai");
         }
         [HttpPost("capnhatphattu")]
+        [Authorize(Roles = "0")]
         public IActionResult SuaPhatTu([FromForm] PhatTuImage phatTuSua)
         {
             var ret = phatTuServices.SuaPhatTu(phatTuSua);
@@ -53,6 +54,7 @@ namespace intern_project.Controllers
             return BadRequest("Cap nhat that bai");
         }
         [HttpDelete ("xoaphattu")]
+        [Authorize(Roles = "0")]
         public IActionResult XoaPhatTu([FromQuery] int phatTuID)
         {
             var ret = phatTuServices.XoaPhatTu(phatTuID);

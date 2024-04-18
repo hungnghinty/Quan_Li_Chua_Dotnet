@@ -30,7 +30,7 @@ namespace intern_project.Controllers
             return BadRequest("them don trang that bai");
         }
         [HttpPost("capnhatdondangky")]
-        //[Authorize(Roles = "0")]
+        [Authorize(Roles = "0")]
         public IActionResult SuaDonDangKy([FromBody] Dondangky donDKSua)
         {
             var sua = donDangKyServices.SuaDonDK(donDKSua);
@@ -41,7 +41,7 @@ namespace intern_project.Controllers
             return BadRequest("Cap nhat dao trang that bai");
         }
         [HttpDelete("xoadondangky/{donXoaID}")]
-        //[Authorize(Roles = "0")]
+        [Authorize(Roles = "0")]
         public IActionResult XoaDonDangKy(int donXoaID)
         {
             var xoa = donDangKyServices.XoaDonDK(donXoaID);
@@ -52,7 +52,7 @@ namespace intern_project.Controllers
             return BadRequest("Xoa dao trang that bai");
         }
         [HttpPost("duyetdondangky/{donDuyet}")]
-        //[Authorize(Roles = "0")]
+        [Authorize(Roles = "0")]
         public IActionResult DuyetDonDangKy(int donDuyet)
         {
             var sua = donDangKyServices.DuyetDonDK(donDuyet);

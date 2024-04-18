@@ -12,10 +12,16 @@ function DondangkiContent() {
   const [search, setSearch] = useState("")
   const [dsphattu, setDsphattu] = useState([])
   const [dsDaotrang, setDsdaotrang] = useState([])
+  const [token, setToken] = useState("")
   const [form] = Form.useForm();
 
   const getDsphattu = ()=>{
-    axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageSize=100`)
+    const userDataJSON = localStorage.getItem('userData');
+    var tk =  JSON.parse(userDataJSON)
+
+    axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageSize=100`,  {headers: {
+      Authorization: `bearer ${tk}`
+    }})
           .then(res => {
               var result = res.data.data
               result = Array.from(result)
@@ -54,7 +60,9 @@ function DondangkiContent() {
     setIsModalCheckOpen(true);
   };
   const handleOkCheck = () => {
-    axios.post(`https://localhost:44334/api/DonDangKy/duyetdondangky/${dondk.dondangkyid}`)
+    axios.post(`https://localhost:44334/api/DonDangKy/duyetdondangky/${dondk.dondangkyid}`, null, {headers: {
+      Authorization: `bearer ${token}`
+    }})
       .then(res => {
         getDatas()
         setIsModalCheckOpen(false);
@@ -78,6 +86,7 @@ function DondangkiContent() {
     setIsModalViewOpen(false);
   };
 
+  console.log(token)
 
   const [isModalEditOpen, setIsModalEditOpen] = useState(false);
   const [ngaytaoSua, setNgaytaoSua] = useState(null);
@@ -101,7 +110,9 @@ function DondangkiContent() {
       dondangkyid: dondk.dondangkyid,
     }
 
-    axios.post(`https://localhost:44334/api/DonDangKy/capnhatdondangky/`, update_data)
+    axios.post(`https://localhost:44334/api/DonDangKy/capnhatdondangky/`, update_data, {headers: {
+      Authorization: `bearer ${token}`
+    }})
       .then(res => {
         getDatas()
         setIsModalEditOpen(false);
@@ -149,7 +160,9 @@ function DondangkiContent() {
           daotrangid: values.daotrang,
         }
     
-        axios.post(`https://localhost:44334/api/DonDangKy/themdondangky`, add_data)
+        axios.post(`https://localhost:44334/api/DonDangKy/themdondangky`, add_data, {headers: {
+          Authorization: `bearer ${token}`
+        }})
           .then(res => {
             getDatas()
             setIsModalAddOpen(false);
@@ -173,7 +186,9 @@ function DondangkiContent() {
     setIsModalDeleteOpen(true);
   };
   const handleOkDelete = () => {
-    axios.delete(`https://localhost:44334/api/DonDangKy/xoadondangky/${dondk.dondangkyid}`)
+    axios.delete(`https://localhost:44334/api/DonDangKy/xoadondangky/${dondk.dondangkyid}`, {headers: {
+      Authorization: `bearer ${token}`
+    }})
       .then(res => {
         getDatas()
         setIsModalDeleteOpen(false);
@@ -190,7 +205,11 @@ function DondangkiContent() {
 
   useEffect(() =>{
     getDatas();
+    const userDataJSON = localStorage.getItem('userData');
+    setToken(JSON.parse(userDataJSON))
   }, [page, search]);
+
+  console.log(token)
 
 
   const handleClickView = (record) =>{

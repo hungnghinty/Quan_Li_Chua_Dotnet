@@ -12,6 +12,8 @@ const AddPagodaModal = ({ closeModal, token, latestId, totalPage, setCount }) =>
     abbot: 0,
   })
   const [pagodaId, setPagodaId] = useState(0)
+  const userDataJSON = localStorage.getItem('userData');
+  var token =  JSON.parse(userDataJSON)
 
   useEffect(() => {
     axios
@@ -71,6 +73,7 @@ const AddPagodaModal = ({ closeModal, token, latestId, totalPage, setCount }) =>
           headers: {
             accept: '*/*',
             'Content-Type': 'application/json',
+             Authorization: `bearer ${token}`
           },
         })
         .then((res) => {

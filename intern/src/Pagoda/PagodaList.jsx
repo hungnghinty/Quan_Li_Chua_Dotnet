@@ -18,6 +18,9 @@ const PagodaList = ({
   count,
   setCount,
 }) => {
+
+  const userDataJSON = localStorage.getItem('userData');
+  var token =  JSON.parse(userDataJSON)
   const [data, setData] = useState([])
   const [openEditModal, setOpenEditModal] = useState(false)
   const [pagination, setPagination] = useState(1)
@@ -52,6 +55,7 @@ const PagodaList = ({
   }, [pagination, findinput, count])
 
   const handleDelete = (id) => {
+    console.log("aaaaaaaaaa")
     const confirm = window.confirm('Bạn có muốn xóa chùa này không?')
     if (confirm) {
       axios
@@ -59,6 +63,8 @@ const PagodaList = ({
           headers: {
             Accept: '*/*',
             'Content-Type': 'application/json',
+            Authorization: `bearer ${token}`
+            
           },
           data: id,
         })

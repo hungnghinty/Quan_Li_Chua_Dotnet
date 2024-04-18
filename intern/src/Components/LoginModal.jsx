@@ -1,32 +1,32 @@
 import { message } from 'antd'
 import React, { useState } from 'react'
+import {useNavigate} from "react-router-dom"
 import '../CSS/AddModal.css'
 import axios from 'axios'
 
-export default function LoginModal({ closeModal, handleToken }) {
+export default function LoginModal() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const [token, setToken] = useState('')
+    const navigate = useNavigate()
 
     let formdata = new FormData()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if(e.target && e.target.files[0]){
         formdata.append('Email', email)
         formdata.append('Password', password)
-        // }
         axios.post("https://localhost:44334/api/Auth/login", formdata, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
         })
             .then(res => {
-                console.log(res.data)
-                handleToken(res.data.toString())
                 if (res.status == 200) {
-                    closeModal(false)
+                    const userDataJSON = JSON.stringify(res.data);
+                    localStorage.setItem('userData', userDataJSON);
+                    navigate("/phattu");
                     alert("Đăng nhập thành công");
                 }
             })

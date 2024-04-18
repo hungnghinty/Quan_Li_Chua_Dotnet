@@ -22,14 +22,22 @@ const PhattuTable = ({
   const [openEditModal, setOpenEditModal] = useState(false)
   const [pagination, setPagination] = useState(1)
   const [totalCount, setTotalCount] = useState()
+  const [currentId, setCurrentId] = useState()
+  const [currentPhattu, setCurrentPhattu] = useState({})
+
+  const userDataJSON = localStorage.getItem('userData');
+  var token =  JSON.parse(userDataJSON)
   // const [currentId, setCurrentId] = useState()
   // const [currentPagoda, setCurrentPagoda] = useState({})
   const pageSize = 3
   useEffect(() => {
+
     if (findinput != null && findinput.length > 0) {
       axios
         .get(
-          `https://localhost:44334/api/PhatTu/laydanhsachphattu?keyword=${findinput}&pageNumb=${pagination}&pageSize=3`
+          `https://localhost:44334/api/PhatTu/laydanhsachphattu?keyword=${findinput}&pageNumb=${pagination}&pageSize=3` , {headers: {
+            Authorization: `bearer ${token}`
+          }}
         )
         .then((res) => {
           setData(res.data.data)
@@ -40,7 +48,9 @@ const PhattuTable = ({
     } else {
       axios
         .get(
-          `https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=${pagination}&pageSize=3`
+          `https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=${pagination}&pageSize=3`, {headers: {
+            Authorization: `bearer ${token}`
+          }}
         )
         .then((res) => {
           setData(res.data.data)
@@ -54,7 +64,9 @@ const PhattuTable = ({
   const handleDelete = (id) => {
     const confirm = window.confirm("u sure that u want to delete?");
     if (confirm) {
-        axios.delete(`https://localhost:44334/api/PhatTu/xoaphattu?phatTuID=${id}`)
+        axios.delete(`https://localhost:44334/api/PhatTu/xoaphattu?phatTuID=${id}`, {headers: {
+          Authorization: `bearer ${token}`
+        }})
             .then(res => {
                 window.location.reload();
             })
@@ -112,12 +124,19 @@ const PhattuTable = ({
             type="primary"
             icon={<EditOutlined />}
             onClick={
-              () => setOpenEditModal(true)
+              () => {
+                setOpenEditModal(true)
+                setCurrentId(text.phattuid)
+                setCurrentPhattu(text)
+            }
             }
           />
           {openEditModal && (
             <EditModal
               closeModal={setOpenEditModal}
+              id = {currentId != null && currentId}
+              user={currentPhattu}
+              setCount={setCount}
             />
           )}
           <Button

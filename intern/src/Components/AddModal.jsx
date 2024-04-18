@@ -7,9 +7,13 @@ export default function AddModal({ closeModal,token}){
     //lay count
     const [data, setData] = useState([])
     const [totalcount, setTotalCount] = useState()
+    const userDataJSON = localStorage.getItem('userData');
+    var token =  JSON.parse(userDataJSON)
 
     useEffect(() => {
-            axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=1&pageSize=2`)
+            axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=1&pageSize=2`,{headers: {
+                Authorization: `bearer ${token}`
+              }})
                 .then(res => {
                     setTotalCount(res.data.pagination.totalCount)
                 })

@@ -2,6 +2,7 @@
 using intern_project.Helper;
 using intern_project.Interface;
 using intern_project.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace intern_project.Controllers
         }
 
         [HttpPost("themchua")]
+        [Authorize(Roles = "0")]
         public IActionResult ThemChua([FromBody] Chua chuaThem)
         {
             var them = chuaServices.ThemChua(chuaThem);
@@ -28,6 +30,7 @@ namespace intern_project.Controllers
             return BadRequest("them chua that bai");
         }
         [HttpPost("capnhatchua")]
+        [Authorize(Roles = "0")]
         public IActionResult SuaChua([FromBody] Chua chuaSua)
         {
             var them = chuaServices.SuaChua(chuaSua);
@@ -38,6 +41,7 @@ namespace intern_project.Controllers
             return BadRequest("cap nhat chua that bai");
         }
         [HttpDelete("xoachua")]
+        [Authorize(Roles = "0")]
         public IActionResult XoaChua([FromBody] int chuaid)
         {
             var them = chuaServices.XoaChua(chuaid);

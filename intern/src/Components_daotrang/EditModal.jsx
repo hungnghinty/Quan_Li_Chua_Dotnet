@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../CSS/AddModal.css";
 import axios from "axios";
 
@@ -11,6 +11,7 @@ export default function EditModal({ closeModal, id, user }) {
   const [thoigiantochuc, setthoigiantochuc] = useState(user.thoigiantochuc);
   const [nguoitrutri, setNguoiTruTri] = useState(user.nguoitrutri);
   const [daketthuc, setDaKetThuc] = useState(user.daketthuc);
+  const [token, setToken] = useState();
 
   const postData = {
     daotrangid: id,
@@ -21,6 +22,12 @@ export default function EditModal({ closeModal, id, user }) {
     thoigiantochuc,
     nguoitrutri,
   };
+
+  useEffect(()=>{
+    const userDataJSON = localStorage.getItem('userData');
+    setToken(JSON.parse(userDataJSON))
+    console.log(token)
+  })
 
   const dataRequired = () => {
     const fields = {
@@ -51,6 +58,7 @@ export default function EditModal({ closeModal, id, user }) {
             headers: {
               accept: "*/*",
               "Content-Type": "application/json",
+              Authorization: `bearer ${token}`
             },
           }
         )

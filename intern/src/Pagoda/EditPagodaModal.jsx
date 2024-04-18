@@ -12,6 +12,9 @@ const EditPagodaModal = ({ closeModal, id, user, setCount }) => {
     abbot: user.trutri,
   })
 
+  const userDataJSON = localStorage.getItem('userData');
+  var token =  JSON.parse(userDataJSON)
+
   const postData = {
     chuaid: id,
     tenchua: pagodaInfo.pagodaName,
@@ -48,6 +51,7 @@ const EditPagodaModal = ({ closeModal, id, user, setCount }) => {
           headers: {
             accept: '*/*',
             'Content-Type': 'application/json',
+            Authorization: `bearer ${token}`
           },
         })
         .then((res) => {

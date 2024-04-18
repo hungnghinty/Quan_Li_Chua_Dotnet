@@ -37,7 +37,7 @@ function App() {
             </button>
             <ul className="sidebar" id="sidebar-content">  
               <li className="part">
-                <a href="/"><i className="fa-solid fa-house"></i>Phật Tử</a>
+                <a href="/phattu"><i className="fa-solid fa-house"></i>Phật Tử</a>
               </li>
               <li className="part">
                 <a href="/daotrang"><i className="fa-regular fa-user"></i>Đạo Tràng</a>
@@ -52,19 +52,19 @@ function App() {
           </div>
 
           <Routes>
-            <Route path='/' element ={<PhattuContent token={token} />} />
+            <Route path='/phattu' element ={<PhattuContent token={token} />} />
             <Route path='/daotrang' element ={<DaotrangContent token={token} />}/>
             <Route path='/chua' element ={<ChuaContent token={token} />}/>
             <Route path='/dondangki' element = {<DondangkiContent/>}/>
+            <Route path='/' element ={<LoginModal />} />
           </Routes>
         </div>
 
       </div>
       
-      {openLoginModal && <LoginModal closeModal={setOpenLoginModal} handleToken={handleToken} />}
-
-
+      {/* {openLoginModal && <LoginModal closeModal={setOpenLoginModal} handleToken={handleToken} />} */}
     </div>
+
   );
 }
 

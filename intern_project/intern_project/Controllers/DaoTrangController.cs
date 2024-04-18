@@ -18,7 +18,7 @@ namespace intern_project.Controllers
             daoTrangServices = new DaoTrangServices();
         }
         [HttpPost("themdaotrang")]
-        //[Authorize (Roles = "0")]
+        [Authorize (Roles = "0")]
         public IActionResult ThemDaoTrang([FromBody] Daotrang daoTrangThem)
         {
             var them = daoTrangServices.ThemDaoTrang(daoTrangThem);
@@ -29,6 +29,7 @@ namespace intern_project.Controllers
             return BadRequest("them dao trang that bai");
         }
         [HttpPost("capnhatdaotrang")]
+        [Authorize(Roles = "0")]
         public IActionResult SuaDaoTrang([FromBody] Daotrang daoTrangSua)
         {
             var them = daoTrangServices.SuaDaoTrang(daoTrangSua);
@@ -39,6 +40,7 @@ namespace intern_project.Controllers
             return BadRequest("Cap nhat dao trang that bai");
         }
         [HttpDelete("xoadaotrang")]
+        [Authorize(Roles = "0")]
         public IActionResult XoaDaoTrang([FromBody] int daoTrangXoaID)
         {
             var them = daoTrangServices.XoaDaoTrang(daoTrangXoaID);
