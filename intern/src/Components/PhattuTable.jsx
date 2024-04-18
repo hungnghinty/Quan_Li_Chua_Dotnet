@@ -68,7 +68,8 @@ const PhattuTable = ({
           Authorization: `bearer ${token}`
         }})
             .then(res => {
-                window.location.reload();
+              message.success('Xóa Phật tử thành công')
+              setCount((prev) => prev + 1)
             })
             .catch(er => console.log(er));
     }

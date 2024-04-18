@@ -162,9 +162,11 @@ namespace intern_project.Services
             var dsPhatTu = DbContext.Phattus.AsEnumerable().Where(x => x.IsActive == true);
             if(!string.IsNullOrEmpty(keyword))
             {
-                 dsPhatTu = dsPhatTu.Where(x => x.Ten.ToLower().Contains(keyword.ToLower())
-                                             || x.Phapdanh.ToLower().Contains(keyword.ToLower())
-                                             || x.Email.ToLower().Contains(keyword.ToLower()));
+                dsPhatTu = dsPhatTu.Where(x =>
+                                            (x.Ten != null && x.Ten.ToLower().Contains(keyword.ToLower())) ||
+                                             (x.Phapdanh != null && x.Phapdanh.ToLower().Contains(keyword.ToLower())) ||
+                                                (x.Email != null && x.Email.ToLower().Contains(keyword.ToLower()))
+                                                );
             }
             var result = PageResult<Phattu>.ToPageResult(pagination, dsPhatTu);
             pagination.totalCount = dsPhatTu.Count();

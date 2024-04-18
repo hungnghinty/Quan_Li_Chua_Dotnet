@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import '../CSS/AddModal.css'
 import axios from 'axios'
+import { message, Select, Form } from 'antd'
 
 
-export default function AddModal({ closeModal,token}){
+export default function AddModal({ closeModal, token, totalPage, setCount }) {
     //lay count
     const [data, setData] = useState([])
     const [totalcount, setTotalCount] = useState()
     const userDataJSON = localStorage.getItem('userData');
-    var token =  JSON.parse(userDataJSON)
+    var token = JSON.parse(userDataJSON)
 
     useEffect(() => {
-            axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=1&pageSize=2`,{headers: {
+        axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=${totalPage}&pageSize=2`, {
+            headers: {
                 Authorization: `bearer ${token}`
-              }})
-                .then(res => {
-                    setTotalCount(res.data.pagination.totalCount)
-                })
-                .catch(er => console.log(er))
+            }
+        })
+            .then(res => {
+                setTotalCount(res.data.pagination.totalCount)
+            })
+            .catch(er => console.log(er))
         // }
     }, [])
     //them du lieu
@@ -40,6 +43,9 @@ export default function AddModal({ closeModal,token}){
     const [ngayhoantuc, setNgayhoantuc] = useState('')
     const [ngayxuatgia, setNgayxuatgia] = useState('')
 
+    const [dschua, setDsChua] = useState([])
+
+
     const handleDaHoanTuc = e => {
         setDahoantuc(!dahoantuc)
     }
@@ -51,45 +57,61 @@ export default function AddModal({ closeModal,token}){
     const handleSubmit = (e) => {
         e.preventDefault();
         // if(e.target && e.target.files[0]){
-            formdata.append('Phattuid',5)
-            formdata.append('Anhchup',anh)
-            formdata.append('Dahoantuc',dahoantuc)
-            formdata.append('Email',email)
-            formdata.append('Gioitinh',gioitinh)
-            formdata.append('Ho', ho)
-            formdata.append('Ngaycapnhat',ngaycapnhat)
-            formdata.append('Ngayhoantuc',ngayhoantuc)
-            formdata.append('Ngaysinh',ngaysinh)
-            formdata.append('Ngayxuatgia',ngayxuatgia)
-            formdata.append('Password',password)
-            formdata.append('Phapdanh',phapdanh)
-            formdata.append('Sodienthoai',sdt)
-            formdata.append('Ten',ten)
-            formdata.append('Tendem',tendem)
-            formdata.append('Chuaid',chuaid)
-            formdata.append('Kieuthanhvienid',kieuthanhvienid)
-            formdata.append('IsActive',true)
-            
+        formdata.append('Phattuid', 5)
+        formdata.append('Anhchup', anh)
+        formdata.append('Dahoantuc', dahoantuc)
+        formdata.append('Email', email)
+        formdata.append('Gioitinh', gioitinh)
+        formdata.append('Ho', ho)
+        formdata.append('Ngaycapnhat', ngaycapnhat)
+        formdata.append('Ngayhoantuc', ngayhoantuc)
+        formdata.append('Ngaysinh', ngaysinh)
+        formdata.append('Ngayxuatgia', ngayxuatgia)
+        formdata.append('Password', password)
+        formdata.append('Phapdanh', phapdanh)
+        formdata.append('Sodienthoai', sdt)
+        formdata.append('Ten', ten)
+        formdata.append('Tendem', tendem)
+        formdata.append('Chuaid', chuaid)
+        formdata.append('Kieuthanhvienid', kieuthanhvienid)
+        formdata.append('IsActive', true)
+
         // }
         const id = data[data.length] - 1
-        axios.post("https://localhost:44334/api/PhatTu/themphattu", formdata,{
+        axios.post("https://localhost:44334/api/PhatTu/themphattu", formdata, {
             headers: {
-              "Content-Type": "multipart/form-data",
-              "Authorization": `bearer ${token}`,
+                "Content-Type": "multipart/form-data",
+                "Authorization": `bearer ${token}`,
             },
-          })
-          .then((res) => {
-            alert("Thêm phattu thành công");
-            window.location.reload();
-          })
-          .catch((er) => {
-            alert(er);
-          });
+        })
+            .then((res) => {
+                message.success('Thêm phattu thành công')
+                setCount((prev) => prev + 1)
+            })
+            .catch((er) => {
+                alert(er);
+            });
 
         closeModal(false)
     }
-     
+    const getDsChua = () => {
+        const userDataJSON = localStorage.getItem('userData');
+        var tk = JSON.parse(userDataJSON)
 
+        axios.get(`https://localhost:44334/api/Chua/laydanhsachchua?pageSize=100`, {
+            headers: {
+                //   Authorization: `bearer ${tk}`
+            }
+        })
+            .then(res => {
+                var result = res.data.data
+                result = Array.from(result)
+                console.log(result)
+                setDsChua(result)
+            })
+            .catch(er => console.log(er))
+    }
+    getDsChua();
     return (
         <div className='modal-background'>
 
@@ -126,7 +148,7 @@ export default function AddModal({ closeModal,token}){
                         </div>
                         <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={e => setPhapdanh(e.target.value)} />
 
-                        <select className="custom-select mb-3" id="mydropdown" onChange={e => setGioitinh( +e.target.value)}>
+                        <select className="custom-select mb-3" id="mydropdown" onChange={e => setGioitinh(+e.target.value)}>
                             <option defaultValue={2} >Gioi tinh</option>
                             <option value={0}>Nam</option>
                             <option value={1}>Nữ</option>
@@ -154,19 +176,35 @@ export default function AddModal({ closeModal,token}){
                             </div>
                         </div>
 
-                        <select className="custom-select mb-3" id="mydropdown" onChange={e => setChuaid( +e.target.value)}>
+                        {/* <select className="custom-select mb-3" id="mydropdown" onChange={e => setChuaid( +e.target.value)}>
                             <option defaultValue={0} >Chùa id</option>
                             <option value= {0} >0</option>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
-                        </select>
+                        </select> */}
 
-                        <select className="custom-select mb-3" id="mydropdown" onChange={e => setKieuthanhvienid( +e.target.value)}>
+                        <div style={{ margin: "8px 0" }}>
+                        <Form.Item label="Chùa" name="chua">
+                            <Select style={{ width: "250px" }} value={chuaid} onChange={value => setChuaid(value)}>
+                                {dschua && dschua.map(value => <Select.Option value={value.chuaid}>{value.tenchua}</Select.Option>)}
+                            </Select>
+                        </Form.Item>
+                        </div>
+                        <div style={{ margin: "8px 0" }}>
+                            <span>Kiểu thành viên </span>
+                            <Select style={{ width: "150px" }} value={kieuthanhvienid} onChange={value => setKieuthanhvienid(value)}>
+                                <Select.Option value="0">Admin</Select.Option>
+                                <Select.Option value="1">Member</Select.Option>
+                                <Select.Option value="2">Mos</Select.Option>
+                            </Select>
+                        </div>
+
+                        {/* <select className="custom-select mb-3" id="mydropdown" onChange={e => setKieuthanhvienid(+e.target.value)}>
                             <option defaultValue={0} >Kiểu thành viên id</option>
                             <option value={0}>0</option>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
-                        </select>
+                        </select> */}
                     </div>
 
                     <div className="input-group mb-3">
@@ -190,7 +228,7 @@ export default function AddModal({ closeModal,token}){
                         <div className="input-group-prepend">
                             <span className="input-group-text" id="basic-addon1">Ngày xuất gia</span>
                         </div>
-                        <input type="date" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={e => setNgayxuatgia(e.target.value)}/>
+                        <input type="date" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={e => setNgayxuatgia(e.target.value)} />
                     </div>
 
                     <div className="input-group-prepend">

@@ -72,7 +72,12 @@ export default function PhattuContent() {
             </div>
           </div>
     
-          {openAddModal && <AddModal closeModal={setOpenAddModal} token = {token}/>}
+          {openAddModal && <AddModal
+           closeModal={setOpenAddModal} 
+           token = {token}
+           setCount={setCount}
+            totalPage={totalPage}
+           />}
         
         </div>
       )

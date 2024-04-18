@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../CSS/AddModal.css'
 import axios from 'axios'
-
+import { message, Select, Form } from 'antd'
 
 export default function EditModal({ closeModal , id, user, setCount}) {
     
@@ -12,22 +12,24 @@ export default function EditModal({ closeModal , id, user, setCount}) {
     var token =  JSON.parse(userDataJSON)
 
 
-    const [ho, setHo] = useState(user.ho)
-    const [tendem, setTendem] = useState(user.tendem)
-    const [ten, setTen] = useState(user.ten)
-    const [anh, setAnh] = useState(user.anh)
-    const [phapdanh, setPhapdanh] = useState(user.phapdanh)
-    const [gioitinh, setGioitinh] = useState(user.gioitinh)
-    const [email, setEmail] = useState(user.email)
-    const [sdt, setSDT] = useState(user.sodienthoai)
-    const [dahoantuc, setDahoantuc] = useState(user.dahoantuc)
-    const [chuaid, setChuaid] = useState(user.chuaid)
-    const [kieuthanhvienid, setKieuthanhvienid] = useState(user.kieuthanhvienid)
-    const [password, setPassword] = useState(user.password)
-    const [ngaysinh, setNgaysinh] = useState(user.ngaysinh)
-    const [ngaycapnhat, setNgaycapnhat] = useState(user.ngaycapnhat)
-    const [ngayhoantuc, setNgayhoantuc] = useState(user.ngayhoantuc)
-    const [ngayxuatgia, setNgayxuatgia] = useState(user.ngayxuatgia)
+    const [ho, setHo] = useState(user.ho||'')
+    const [tendem, setTendem] = useState(user.tendem||'')
+    const [ten, setTen] = useState(user.ten||'')
+    const [anh, setAnh] = useState(user.anh||'')
+    const [phapdanh, setPhapdanh] = useState(user.phapdanh||'')
+    const [gioitinh, setGioitinh] = useState(user.gioitinh||0)
+    const [email, setEmail] = useState(user.email||'')
+    const [sdt, setSDT] = useState(user.sodienthoai||'')
+    const [dahoantuc, setDahoantuc] = useState(user.dahoantuc||false)
+    const [chuaid, setChuaid] = useState(user.chuaid||0)
+    const [kieuthanhvienid, setKieuthanhvienid] = useState(user.kieuthanhvienid||0)
+    const [password, setPassword] = useState(user.password||'')
+    const [ngaysinh, setNgaysinh] = useState(user.ngaysinh||'')
+    const [ngaycapnhat, setNgaycapnhat] = useState(user.ngaycapnhat||'')
+    const [ngayhoantuc, setNgayhoantuc] = useState(user.ngayhoantuc||'')
+    const [ngayxuatgia, setNgayxuatgia] = useState(user.ngayxuatgia||'')
+
+    const [dschua, setDsChua] = useState([])
 
     const handleDaHoanTuc = e => {
         setDahoantuc(!dahoantuc)
@@ -60,7 +62,6 @@ export default function EditModal({ closeModal , id, user, setCount}) {
             formdata.append('Chuaid',chuaid)
             formdata.append('Kieuthanhvienid',kieuthanhvienid)
             formdata.append('IsActive',true)
-            console.log(ngaycapnhat);
         // }
         axios.post("https://localhost:44334/api/PhatTu/capnhatphattu", formdata,{
             headers: {
@@ -76,7 +77,24 @@ export default function EditModal({ closeModal , id, user, setCount}) {
           });
         closeModal(false)
     }
-     
+    const getDsChua = () => {
+        const userDataJSON = localStorage.getItem('userData');
+        var tk = JSON.parse(userDataJSON)
+
+        axios.get(`https://localhost:44334/api/Chua/laydanhsachchua?pageSize=100`, {
+            headers: {
+                //   Authorization: `bearer ${tk}`
+            }
+        })
+            .then(res => {
+                var result = res.data.data
+                result = Array.from(result)
+                console.log(result)
+                setDsChua(result)
+            })
+            .catch(er => console.log(er))
+    }
+    getDsChua();
 
     return (
         <div className='modal-background'>
@@ -104,7 +122,7 @@ export default function EditModal({ closeModal , id, user, setCount}) {
                     <div>
                         <div className="custom-file mb-3 col-4">
                             <label className="custom-file-label" for="inputGroupFile01">Ảnh đại diện</label>
-                            <input type="file" className="custom-file-input" id="inputGroupFile01" onChange={hanldeAnhChup} value={anh} />
+                            <input type="file" className="custom-file-input" id="inputGroupFile01" onChange={hanldeAnhChup} />
                         </div>
                     </div>
 
@@ -142,7 +160,7 @@ export default function EditModal({ closeModal , id, user, setCount}) {
                             </div>
                         </div>
 
-                        <select className="custom-select mb-3" id="mydropdown" onChange={e => setChuaid( +e.target.value)} value={chuaid}>
+                        {/* <select className="custom-select mb-3" id="mydropdown" onChange={e => setChuaid( +e.target.value)} value={chuaid}>
                             <option defaultValue={0} >Chùa id</option>
                             <option value= {0} >0</option>
                             <option value={1}>1</option>
@@ -154,7 +172,22 @@ export default function EditModal({ closeModal , id, user, setCount}) {
                             <option value={0}>0</option>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
-                        </select>
+                        </select> */}
+                        <div style={{ margin: "8px 0" }}>
+                        <Form.Item label="Chùa" name="chua">
+                            <Select style={{ width: "250px" }} value={chuaid} onChange={value => setChuaid(value)}>
+                                {dschua && dschua.map(value => <Select.Option value={value.chuaid}>{value.tenchua}</Select.Option>)}
+                            </Select>
+                        </Form.Item>
+                        </div>
+                        <div style={{ margin: "8px 0" }}>
+                            <span>Kiểu thành viên </span>
+                            <Select style={{ width: "150px" }} value={kieuthanhvienid} onChange={value => setKieuthanhvienid(value)}>
+                                <Select.Option value="0">Admin</Select.Option>
+                                <Select.Option value="1">Member</Select.Option>
+                                <Select.Option value="2">Mos</Select.Option>
+                            </Select>
+                        </div>
                     </div>
 
                     <div className="input-group mb-3">
