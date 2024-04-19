@@ -8,7 +8,7 @@ export default function AddModal({ closeModal,token}){
     const [data, setData] = useState([])
     const [totalcount, setTotalCount] = useState()
     const userDataJSON = localStorage.getItem('userData');
-    var token =  JSON.parse(userDataJSON)
+    token =  JSON.parse(userDataJSON)
 
     useEffect(() => {
             axios.get(`https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=1&pageSize=2`,{headers: {
