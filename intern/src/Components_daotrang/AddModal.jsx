@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/AddModal.css";
 import axios from "axios";
+import { message } from 'antd'
 
-export default function AddModal({ closeModal, token }) {
+
+export default function AddModal({ closeModal, token, setCount }) {
   //lay count
   const [data, setData] = useState([]);
   const [totalcount, setTotalCount] = useState();
+  const userDataJSON = localStorage.getItem('userData');
+  token =  JSON.parse(userDataJSON)
 
   useEffect(() => {
     axios
@@ -60,11 +64,12 @@ export default function AddModal({ closeModal, token }) {
           headers: {
             accept: "*/*",
             "Content-Type": "application/json",
+            Authorization: `bearer ${token}`
           },
         })
         .then((res) => {
-          alert("Thêm thành công");
-          window.location.reload();
+          message.success('Thêm đạo tràng thành công')
+          setCount((prev) => prev + 1)
         })
         .catch((er) => {
           alert(er);

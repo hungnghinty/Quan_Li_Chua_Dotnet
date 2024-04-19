@@ -11,46 +11,38 @@ import {
   RightOutlined,
 } from '@ant-design/icons'
 
-const PhattuTable = ({
+const DaoTrangTable = ({
   findinput,
   setLatestId,
   setTotalPage,
   count,
   setCount,
 }) => {
+  const userDataJSON = localStorage.getItem('userData');
+  var token =  JSON.parse(userDataJSON)
   const [data, setData] = useState([])
   const [openEditModal, setOpenEditModal] = useState(false)
   const [pagination, setPagination] = useState(1)
   const [totalCount, setTotalCount] = useState()
   const [currentId, setCurrentId] = useState()
-  const [currentPhattu, setCurrentPhattu] = useState({})
-
-  const userDataJSON = localStorage.getItem('userData');
-  var token =  JSON.parse(userDataJSON)
-  // const [currentId, setCurrentId] = useState()
-  // const [currentPagoda, setCurrentPagoda] = useState({})
+  const [currentDaoTrang, setCurrentDaoTrang] = useState({})
   const pageSize = 3
   useEffect(() => {
-
     if (findinput != null && findinput.length > 0) {
       axios
         .get(
-          `https://localhost:44334/api/PhatTu/laydanhsachphattu?keyword=${findinput}&pageNumb=${pagination}&pageSize=3` , {headers: {
-            Authorization: `bearer ${token}`
-          }}
+          `https://localhost:44334/api/DaoTrang/getdanhsachdaotrang?keyword=${findinput}&pageNumb=${pagination}&pageSize=3`
         )
         .then((res) => {
           setData(res.data.data)
           setTotalPage(res.data.pagination.totalPage)
-          setTotalCount(res.data.pagination.totalCount)
+          setTotalCount(res.data.data.length)
         })
         .catch((er) => console.log(er))
     } else {
       axios
         .get(
-          `https://localhost:44334/api/PhatTu/laydanhsachphattu?pageNumb=${pagination}&pageSize=3`, {headers: {
-            Authorization: `bearer ${token}`
-          }}
+          `https://localhost:44334/api/DaoTrang/getdanhsachdaotrang?pageNumb=${pagination}&pageSize=3`
         )
         .then((res) => {
           setData(res.data.data)
@@ -64,12 +56,17 @@ const PhattuTable = ({
   const handleDelete = (id) => {
     const confirm = window.confirm("u sure that u want to delete?");
     if (confirm) {
-        axios.delete(`https://localhost:44334/api/PhatTu/xoaphattu?phatTuID=${id}`, {headers: {
-          Authorization: `bearer ${token}`
-        }})
+        axios.delete("https://localhost:44334/api/DaoTrang/xoadaotrang", {
+              headers: {
+                Accept: "*/*",
+                "Content-Type": "application/json",
+                Authorization: `bearer ${token}`
+              },
+              data: id,
+            })
             .then(res => {
-              message.success('Xóa Phật tử thành công')
-              setCount((prev) => prev + 1)
+              message.success('Xóa đạo tràng thành công')
+              setCount(prev => prev + 1)
             })
             .catch(er => console.log(er));
     }
@@ -78,43 +75,47 @@ const PhattuTable = ({
   const columns = [
     {
       title: 'ID',
-      dataIndex: 'phattuid',
-      key: 'phattuid',
+      dataIndex: 'daotrangid',
+      key: 'daotrangid',
     },
     {
-      title: 'Ho',
-      dataIndex: 'ho',
-      key: 'ho',
+      title: 'Trạng thái',
+      dataIndex: 'daketthuc',
+      key: 'daketthuc',
+      render: (daketthuc) => (
+        daketthuc ? 'Đã kết thúc' : 'Chưa kết thúc'
+      ),
     },
     {
-      title: 'Ten',
-      dataIndex: 'ten',
-      key: 'ten',
+      title: 'Nội dung',
+      dataIndex: 'noidung',
+      key: 'noidung',
     },
     {
-      title: 'GioiTinh',
-      dataIndex: 'gioitinh',
-      key: 'gioitinh',
+      title: 'Nơi tổ chức',
+      dataIndex: 'noitochuc',
+      key: 'noitochuc',
     },
     {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
+      title: 'Số thành viên',
+      dataIndex: 'sothanhvienthamgia',
+      key: 'sothanhvienthamgia',
     },
     {
-      title: 'SDT',
-      dataIndex: 'sodienthoai',
-      key: 'sodienthoai',
+      title: 'Thời gian tổ chức',
+      dataIndex: 'thoigiantochuc',
+      key: 'thoigiantochuc',
+      render: (thoigiantochuc) => {
+        const [datePart, timePart] = thoigiantochuc.split('T');
+        const [year, month, day] = datePart.split('-');
+        const formattedDate = `${day}-${month}-${year}`;
+        return `${formattedDate} || "${timePart}"`;
+      }
     },
     {
-      title: 'Chuaid',
-      dataIndex: 'chuaid',
-      key: 'chuaid',
-    },
-    {
-      title: 'KieuThanhVienID',
-      dataIndex: 'kieuthanhvienid',
-      key: 'kieuthanhvienid',
+      title: 'Người trụ trì',
+      dataIndex: 'nguoitrutri',
+      key: 'nguoitrutri',
     },
     {
       title: 'Hành động',
@@ -124,28 +125,26 @@ const PhattuTable = ({
           <Button
             type="primary"
             icon={<EditOutlined />}
-            onClick={
-              () => {
-                setOpenEditModal(true)
-                setCurrentId(text.phattuid)
-                setCurrentPhattu(text)
-            }
-            }
+            onClick={() => {
+              setOpenEditModal(true)
+              setCurrentId(text.daotrangid)
+              setCurrentDaoTrang(text)
+            }}
           />
           {openEditModal && (
             <EditModal
               closeModal={setOpenEditModal}
-              id = {currentId != null && currentId}
-              user={currentPhattu}
+              id={currentId != null && currentId}
+              user={currentDaoTrang}
               setCount={setCount}
-            />
+              />
           )}
           <Button
             type="primary"
             danger
             icon={<DeleteOutlined />}
             onClick={
-              () => handleDelete(text.phattuid)
+              () => handleDelete(text.daotrangid)
             }
           />
         </Space>
@@ -173,4 +172,4 @@ const PhattuTable = ({
     </div>
   )
 }
-export default PhattuTable
+export default DaoTrangTable

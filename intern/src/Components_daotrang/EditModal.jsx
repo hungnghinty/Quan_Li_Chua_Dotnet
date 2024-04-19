@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/AddModal.css";
 import axios from "axios";
+import { message } from 'antd'
 
-export default function EditModal({ closeModal, id, user }) {
+
+export default function EditModal({ closeModal, id, user, setCount }) {
   const [noitochuc, setNoiToChuc] = useState(user.noitochuc);
   const [noidung, setNoiDung] = useState(user.noidung);
   const [sothanhvienthamgia, setSoLuongThanhVien] = useState(
@@ -11,7 +13,10 @@ export default function EditModal({ closeModal, id, user }) {
   const [thoigiantochuc, setthoigiantochuc] = useState(user.thoigiantochuc);
   const [nguoitrutri, setNguoiTruTri] = useState(user.nguoitrutri);
   const [daketthuc, setDaKetThuc] = useState(user.daketthuc);
+
   const [token, setToken] = useState();
+
+  
 
   const postData = {
     daotrangid: id,
@@ -48,6 +53,7 @@ export default function EditModal({ closeModal, id, user }) {
   };
 
   const handleSubmit = (e) => {
+    console.log(user.thoigiantochuc)
     e.preventDefault();
     if (dataRequired()) {
       axios
@@ -63,8 +69,8 @@ export default function EditModal({ closeModal, id, user }) {
           }
         )
         .then((res) => {
-          alert("Sửa thành công");
-          window.location.reload();
+          message.success('Sửa đạo tràng thành công')
+          setCount((prev) => prev + 1)
         })
         .catch((er) => {
           alert(er);
