@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj": {}
+    "E:\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj": {
+    "E:\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj",
+        "projectUniqueName": "E:\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj",
         "projectName": "intern_project",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj",
+        "projectPath": "E:\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\intern_project.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\obj\\",
+        "outputPath": "E:\\Quan_Li_Chua_Dotnet\\intern_project\\intern_project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

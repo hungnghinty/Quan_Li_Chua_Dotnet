@@ -55,7 +55,7 @@ namespace intern_project.Controllers
         }
         [HttpDelete ("xoaphattu")]
         [Authorize(Roles = "0")]
-        public IActionResult XoaPhatTu([FromQuery] int phatTuID)
+        public IActionResult XoaPhatTu([FromForm] int phatTuID)
         {
             var ret = phatTuServices.XoaPhatTu(phatTuID);
             if(ret == ErrorType.ThanhCong)

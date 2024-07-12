@@ -19,6 +19,7 @@ namespace intern_project.Controllers
             donDangKyServices = new DonDangKyServices();
         }
         [HttpPost("themdondangky")]
+        [Authorize(Roles = "0")]
         public IActionResult ThemDonDangKy([FromBody] Dondangky donDKThem)
         {
             donDKThem.Trangthaidon = 0;
